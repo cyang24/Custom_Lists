@@ -1,0 +1,6 @@
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomLists/bin/Debug/CustomLists.exe
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomLists/bin/Debug/CustomLists.pdb
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomLists/obj/x86/Debug/CustomLists.csprojResolveAssemblyReference.cache
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomLists/obj/x86/Debug/CustomLists.csproj.CoreCompileInputs.cache
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomLists/obj/x86/Debug/CustomLists.exe
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomLists/obj/x86/Debug/CustomLists.pdb

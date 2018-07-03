@@ -1,0 +1,2 @@
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomListsTest/obj/Debug/CustomListsTest.csprojResolveAssemblyReference.cache
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomListsTest/obj/Debug/CustomListsTest.csproj.CoreCompileInputs.cache

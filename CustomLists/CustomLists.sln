@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomLists", "CustomLists\CustomLists.csproj", "{A6E16049-7AB0-41D8-B156-29AD10EFD436}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomListsTest", "CustomListsTest\CustomListsTest.csproj", "{AC849392-6E66-4525-97E1-2FEC7A774FEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6E16049-7AB0-41D8-B156-29AD10EFD436}.Debug|x86.ActiveCfg = Debug|x86
+		{A6E16049-7AB0-41D8-B156-29AD10EFD436}.Debug|x86.Build.0 = Debug|x86
+		{A6E16049-7AB0-41D8-B156-29AD10EFD436}.Release|x86.ActiveCfg = Release|x86
+		{A6E16049-7AB0-41D8-B156-29AD10EFD436}.Release|x86.Build.0 = Release|x86
+		{AC849392-6E66-4525-97E1-2FEC7A774FEB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AC849392-6E66-4525-97E1-2FEC7A774FEB}.Debug|x86.Build.0 = Debug|Any CPU
+		{AC849392-6E66-4525-97E1-2FEC7A774FEB}.Release|x86.ActiveCfg = Release|Any CPU
+		{AC849392-6E66-4525-97E1-2FEC7A774FEB}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
