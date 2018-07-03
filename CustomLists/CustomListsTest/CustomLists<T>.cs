@@ -1,5 +1,8 @@
 ﻿using NUnit.Framework;
 using System;
+using System.Collections.Generic;
+using CustomLists;
+
 namespace CustomListsTest
 {
     [TestFixture()]
@@ -8,18 +11,18 @@ namespace CustomListsTest
         [Test()]
         public void AddtoListCustom()
         {   
-
             // Arrange
             CustomLists<T> myList = new CustomLists<T>();
 
-            int value = 16;
+            int expected = 16;
 
 
             // Act
-            myList.Add(value);
+            myList.Add(expected);
 
             // Assert
-            Assert.AreEqual(value, myList[0]);
+            int actual = myList[0];
+            Assert.AreEqual(expected, actual);
 
         }
     }

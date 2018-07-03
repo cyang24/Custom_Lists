@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 
 namespace CustomLists
 {
@@ -6,7 +8,8 @@ namespace CustomLists
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<int> numbers = new List<int>();
+            numbers.Add(1);
         }
     }
 }
