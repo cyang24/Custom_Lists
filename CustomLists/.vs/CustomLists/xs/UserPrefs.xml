@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{A6E16049-7AB0-41D8-B156-29AD10EFD436}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="CustomLists/Program.cs" Line="11" Column="23" />
-      <File FileName="CustomListsTest/CustomLists&lt;T&gt;.cs" Line="13" Column="23" />
+      <File FileName="CustomListsTest/CustomListsTest.cs" Line="31" Column="1" />
+      <File FileName="CustomLists/CustomLists.cs" Line="10" Column="10" />
+      <File FileName="CustomLists/Program.cs" Line="12" Column="23" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
