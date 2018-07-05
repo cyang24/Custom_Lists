@@ -508,5 +508,37 @@ namespace CustomListsTest
             //Assert     
             Assert.AreEqual(expected, actual[6]);
         }
+
+        ///////////////////////////////// Overload Minus Sign Operator
+
+
+        [Test()]
+        public void OverloadMinusSignOperatorSubtractTwoListsTogether()
+        {
+            //Arrange
+            CustomLists myList = new CustomLists();
+            Add.mylist(0);
+            Add.mylist(1);
+            Add.mylist(2);
+            Add.mylist(3);
+            Add.mylist(4);
+            Add.mylist(5);
+
+            CustomLists myList2 = new CustomLists();
+            Add.mylist(4);
+            Add.mylist(3);
+            Add.mylist(2);
+            Add.mylist(1);
+            Add.mylist(0);
+
+            int expected = 5;
+
+            //Act
+            CustomLists actual = myList - myList2;
+
+
+            //Assert     
+            Assert.AreEqual(expected, actual[0]);
+        }
     }
 }
