@@ -8,8 +8,7 @@ namespace CustomLists
     {
         public static void Main(string[] args)
         {
-            //List<int> numbers = new List<int>();
-            //numbers.Remove(1);
+         
         }
     }
 }

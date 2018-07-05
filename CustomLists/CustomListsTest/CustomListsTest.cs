@@ -16,7 +16,7 @@ namespace CustomListsTest
         {
             // Arrange
 
-            CustomLists myList = new CustomLists();
+            CustomLists<int> myList = new CustomLists<int>();
 
             int value = 16;
             int expected = 16;
@@ -32,513 +32,513 @@ namespace CustomListsTest
 
         }
 
-        [Test()]
-        public void AddTwoValuesList()
-        {
-            // Arrange
+        //[Test()]
+        //public void AddTwoValuesList()
+        //{
+        //    // Arrange
 
-            CustomLists myList = new CustomLists();
+        //    CustomLists myList = new CustomLists();
 
-            int value = 16;
-            int value2 = 40;
-            int expected = 40;
+        //    int value = 16;
+        //    int value2 = 40;
+        //    int expected = 40;
                 
-            // Act
+        //    // Act
 
-            myList.Add(value);
-            myList.Add(value2);
+        //    myList.Add(value);
+        //    myList.Add(value2);
 
-            // Assert
+        //    // Assert
 
-            int actual = myList[1];
-            Assert.AreEqual(expected, actual);
+        //    int actual = myList[1];
+        //    Assert.AreEqual(expected, actual);
 
-        }
+        //}
 
-        [Test()]
-        public void AddMultipleValuesWithMathList()
-        {
-            // Arrange
+        //[Test()]
+        //public void AddMultipleValuesWithMathList()
+        //{
+        //    // Arrange
 
-            CustomLists myList = new CustomLists();
+        //    CustomLists myList = new CustomLists();
 
-            int value = 16;
-            int value2 = 40;
-            int value3 = 3 + 4;
-            int expected = 7;
+        //    int value = 16;
+        //    int value2 = 40;
+        //    int value3 = 3 + 4;
+        //    int expected = 7;
             
-            // Act
+        //    // Act
 
-            myList.Add(value);
-            myList.Add(value2);
-            myList.Add(value3);
+        //    myList.Add(value);
+        //    myList.Add(value2);
+        //    myList.Add(value3);
 
-            // Assert
+        //    // Assert
 
-            int actual = myList[2];
-            Assert.AreEqual(expected, actual);
-        }
+        //    int actual = myList[2];
+        //    Assert.AreEqual(expected, actual);
+        //}
 
-        [Test()]
-        public void AddStringList()
-        {
-            // Arrange
+        //[Test()]
+        //public void AddStringList()
+        //{
+        //    // Arrange
 
-            CustomLists myList = new CustomLists();
+        //    CustomLists myList = new CustomLists();
 
-            string value = "a";
-            string expected = "a";
+        //    string value = "a";
+        //    string expected = "a";
 
-            // Act
+        //    // Act
 
-            myList.Add(value);
+        //    myList.Add(value);
           
 
-            // Assert
+        //    // Assert
 
-            string actual = myList[0];
-            Assert.AreEqual(expected, actual);
-        }
+        //    string actual = myList[0];
+        //    Assert.AreEqual(expected, actual);
+        //}
 
-        public void AddObjectsFromList()
-        {
-            //Arrange
-            CustomLists myList = new CustomLists();
+        //public void AddObjectsFromList()
+        //{
+        //    //Arrange
+        //    CustomLists myList = new CustomLists();
 
-            CustomLists colors = new CustomLists();
-            colors.Add("red");
-            colors.Add("orange");
-            colors.Add("yellow");
+        //    CustomLists colors = new CustomLists();
+        //    colors.Add("red");
+        //    colors.Add("orange");
+        //    colors.Add("yellow");
 
-            CustomLists colors2 = new CustomLists();
-            colors2 = new CustomLists();
-            colors2.Add("green");
-            colors2.Add("blue");
-            colors2.Add("indigo");
+        //    CustomLists colors2 = new CustomLists();
+        //    colors2 = new CustomLists();
+        //    colors2.Add("green");
+        //    colors2.Add("blue");
+        //    colors2.Add("indigo");
 
-            CustomLists expected = new CustomLists();
-            expected.Add("red");
-            expected.Add("orange");
-            expected.Add("yellow");
-            expected.Add("green");
-            expected.Add("blue");
-            expected.Add("indigo");
+        //    CustomLists expected = new CustomLists();
+        //    expected.Add("red");
+        //    expected.Add("orange");
+        //    expected.Add("yellow");
+        //    expected.Add("green");
+        //    expected.Add("blue");
+        //    expected.Add("indigo");
 
-            //Act
-            myList = myList.Add(colors) + myList.Add(colors2);
+        //    //Act
+        //    myList = myList.Add(colors) + myList.Add(colors2);
 
-            //Assert
-            CustomLists actual = myList;
+        //    //Assert
+        //    CustomLists actual = myList;
 
-            Assert.AreEqual(expected, actual);
+        //    Assert.AreEqual(expected, actual);
 
-        }
+        //}
 
-        ///////////////////////////////// Remove from lists
+        /////////////////////////////////// Remove from lists
 
-        [Test()]
-        public void RemoveIntFromList()
-        {
-            //Arrange
-            CustomLists myList = new CustomLists(); 
-            int value = 5;
-            int value2 = 10;
-            int value3 = 20;
-            int expected = 20;
+        //[Test()]
+        //public void RemoveIntFromList()
+        //{
+        //    //Arrange
+        //    CustomLists myList = new CustomLists(); 
+        //    int value = 5;
+        //    int value2 = 10;
+        //    int value3 = 20;
+        //    int expected = 20;
 
-            //Act
-            myList.Add(value);
-            myList.Add(value2);
-            myList.Add(value3);
+        //    //Act
+        //    myList.Add(value);
+        //    myList.Add(value2);
+        //    myList.Add(value3);
 
-            int actual = myList.Remove(1);
+        //    int actual = myList.Remove(1);
 
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
 
-        [Test()]
-        public void RemoveStringFromList()
-        {
-            //Arrange
-            CustomLists myList = new CustomLists();
-            myList.Add("What ");
-            myList.Add("color ");
-            myList.Add("are ");
-            myList.Add("your ");
-            myList.Add("shoes?");
-            myList.Add(".");
+        //[Test()]
+        //public void RemoveStringFromList()
+        //{
+        //    //Arrange
+        //    CustomLists myList = new CustomLists();
+        //    myList.Add("What ");
+        //    myList.Add("color ");
+        //    myList.Add("are ");
+        //    myList.Add("your ");
+        //    myList.Add("shoes?");
+        //    myList.Add(".");
 
-            string expected = "What are your shoes?.";
+        //    string expected = "What are your shoes?.";
 
-            //Act
+        //    //Act
 
-            myList.Remove("color");
-            string actual = myList.Remove("string");
+        //    myList.Remove("color");
+        //    string actual = myList.Remove("string");
 
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
 
-        [Test()]
-        public void RemoveObjectsFromList()
-        {
-            //Arrange
-            CustomLists myList = new CustomLists();
+        //[Test()]
+        //public void RemoveObjectsFromList()
+        //{
+        //    //Arrange
+        //    CustomLists myList = new CustomLists();
 
-            CustomLists colors = new CustomLists();
-            colors.Add("red");
-            colors.Add("orange");
-            colors.Add("yellow");
+        //    CustomLists colors = new CustomLists();
+        //    colors.Add("red");
+        //    colors.Add("orange");
+        //    colors.Add("yellow");
 
-            CustomLists colors2 = new CustomLists();
-            colors2 = new CustomLists();
-            colors2.Add("green");
-            colors2.Add("blue");
-            colors2.Add("indigo");
+        //    CustomLists colors2 = new CustomLists();
+        //    colors2 = new CustomLists();
+        //    colors2.Add("green");
+        //    colors2.Add("blue");
+        //    colors2.Add("indigo");
 
-            CustomLists expected = colors;
+        //    CustomLists expected = colors;
 
-            //Act
-            myList = myList.Add(colors) + myList.Add(colors2);
-            myList = myList - myList.Remove(colors2);
+        //    //Act
+        //    myList = myList.Add(colors) + myList.Add(colors2);
+        //    myList = myList - myList.Remove(colors2);
 
-            //Assert
-            CustomLists actual = myList;
+        //    //Assert
+        //    CustomLists actual = myList;
 
-            Assert.AreEqual(expected, actual);
+        //    Assert.AreEqual(expected, actual);
 
-        }
+        //}
 
       
-        ///////////////////////////////// Count
+        /////////////////////////////////// Count Property
 
-        [Test()]
-        public void CountStringsInList()
-        {
-            //Arrange
-            CustomLists myList = new CustomLists(); 
-            myList.Add("red");
-            myList.Add("orange");
-            myList.Add("yellow");
+        //[Test()]
+        //public void CountStringsInList()
+        //{
+        //    //Arrange
+        //    CustomLists myList = new CustomLists(); 
+        //    myList.Add("red");
+        //    myList.Add("orange");
+        //    myList.Add("yellow");
 
-            int expected = 3;
+        //    int expected = 3;
 
-            //Act
-            int actual = myList.Count;
+        //    //Act
+        //    int actual = myList.Count;
 
-            //Assert
+        //    //Assert
 
-            Assert.AreEqual(expected, actual);
-        }
+        //    Assert.AreEqual(expected, actual);
+        //}
 
-        [Test()]
-        public void CountObjectsList()
-        {
-            //Arrange
+        //[Test()]
+        //public void CountObjectsList()
+        //{
+        //    //Arrange
          
-            CustomLists colors = new CustomLists();
-            colors.Add("red");
-            colors.Add("orange");
-            colors.Add("yellow");
+        //    CustomLists colors = new CustomLists();
+        //    colors.Add("red");
+        //    colors.Add("orange");
+        //    colors.Add("yellow");
 
-            CustomLists colors2 = new CustomLists();
-            colors2 = new CustomLists();
-            colors2.Add("green");
-            colors2.Add("blue");
-            colors2.Add("indigo");
+        //    CustomLists colors2 = new CustomLists();
+        //    colors2 = new CustomLists();
+        //    colors2.Add("green");
+        //    colors2.Add("blue");
+        //    colors2.Add("indigo");
 
-            CustomLists myList = new CustomLists();
-            myList.Add(colors);
-            myList.Add(colors2);
+        //    CustomLists myList = new CustomLists();
+        //    myList.Add(colors);
+        //    myList.Add(colors2);
 
-            int expected = 6;
+        //    int expected = 6;
 
-            //Act
-            int actual = myList.Count;
+        //    //Act
+        //    int actual = myList.Count;
 
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
 
-        ///////////////////////////////// Add an object to an instance
+        /////////////////////////////////// Add an object to an instance
 
-        [Test()]
-        public void IterateListAddObject()
-        {
-            // Arrange
+        //[Test()]
+        //public void IterateListAddObject()
+        //{
+        //    // Arrange
 
-            CustomLists myList = new CustomLists();
+        //    CustomLists myList = new CustomLists();
 
-            int amountToAdd = 12;
-            int expected = 12;
+        //    int amountToAdd = 12;
+        //    int expected = 12;
 
 
-            // Act
-            foreach(int x in myList)
-            {
+        //    // Act
+        //    foreach(int x in myList)
+        //    {
                 
-            }
+        //    }
 
-            for (int i = 0; i < amountToAdd; i++)
-            {
-                myList = new CustomLists();
-                myList.Add(myList);
-            }
+        //    //for (int i = 0; i < amountToAdd; i++)
+        //    //{
+        //    //    myList = new CustomLists();
+        //    //    myList.Add(myList);
+        //    //}
          
 
-            // Assert
+        //    // Assert
 
-            int actual = myList.Count;
+        //    int actual = myList.Count;
 
-            Assert.AreEqual(expected, actual);
-        }
+        //    Assert.AreEqual(expected, actual);
+        //}
 
-        [Test()]
-        public void IterateListObject2()
-        {
-            // Arrange
+        //[Test()]
+        //public void IterateListObject2()
+        //{
+        //    // Arrange
 
-            CustomLists myList = new CustomLists();
+        //    CustomLists myList = new CustomLists();
 
-            int amountToAdd = 12;
-            int expected = 24;
-
-
-            // Act
-
-            for (int i = 0; i < amountToAdd; i++)
-            {
-                myList = new CustomLists();
-                myList.Add(i) += myList.Add(i);
-            }
+        //    int amountToAdd = 12;
+        //    int expected = 24;
 
 
-            // Assert
+        //    // Act
 
-            int actual = myList.Count;
-
-            Assert.AreEqual(expected, actual);
-        }
-
-        [Test()]
-        public void IterateListAddIfMath()
-        {
-            // Arrange
-
-            CustomLists myList = new CustomLists();
-
-            int amountToAdd = 6 + 7;
-            int expected = 13;
+        //    for (int i = 0; i < amountToAdd; i++)
+        //    {
+        //        myList = new CustomLists();
+        //        myList.Add(i) += myList.Add(i);
+        //    }
 
 
-            // Act
+        //    // Assert
 
-            for (int i = 0; i < amountToAdd; i++)
-            {
-                myList = new CustomLists();
-                myList.Add(i);
-            }
+        //    int actual = myList.Count;
 
+        //    Assert.AreEqual(expected, actual);
+        //}
 
-            // Assert
+        //[Test()]
+        //public void IterateListAddIfMath()
+        //{
+        //    // Arrange
 
-            int actual = myList.Count;
+        //    CustomLists myList = new CustomLists();
 
-            Assert.AreEqual(expected, actual);
-        }
-
-        [Test()]
-        public void IterateListAddNegativeInt()
-        {
-            // Arrange
-
-            CustomLists myList = new CustomLists();
-
-            int amountToAdd = -5;
-            int expected = IndexOutOfRangeException;
+        //    int amountToAdd = 6 + 7;
+        //    int expected = 13;
 
 
-            // Act
+        //    // Act
 
-            for (int i = 0; i < amountToAdd; i++)
-            {
-                myList = new CustomLists();
-                myList.Add(i);
-            }
-
-
-            // Assert
-
-            int actual = myList.Count;
-
-            Assert.AreEqual(expected, actual);
-        }
-
-        ///////////////////////////////// Remove an object to an instance
-
-        [Test()]
-        public void IterateListRemove()
-        {
-            // Arrange
-
-            CustomLists myList = new CustomLists();
-
-            int amountToSubtract = 12;
-            int expected = IndexOutOfRangeException;
+        //    for (int i = 0; i < amountToAdd; i++)
+        //    {
+        //        myList = new CustomLists();
+        //        myList.Add(i);
+        //    }
 
 
-            // Act
+        //    // Assert
 
-            for (int i = 0; i < amountToSubtract; i++)
-            {
-                myList = new CustomLists();
-                myList.Remove[0];
-            }
+        //    int actual = myList.Count;
 
+        //    Assert.AreEqual(expected, actual);
+        //}
 
-            // Assert
+        //[Test()]
+        //public void IterateListAddNegativeInt()
+        //{
+        //    // Arrange
 
-            int actual = myList.Count;
+        //    CustomLists myList = new CustomLists();
 
-            Assert.AreEqual(expected, actual);
-        }
-
-        [Test()]
-        public void IterateListRemoveNegativeInt()
-        {
-            // Arrange
-
-            CustomLists myList = new CustomLists();
-
-            int amountToSubtract = -2;
-            int expected = null;
+        //    int amountToAdd = -5;
+        //    int expected = IndexOutOfRangeException;
 
 
-            // Act
+        //    // Act
 
-            for (int i = 0; i < amountToSubtract; i++)
-            {
-                myList = new CustomLists();
-                myList.remove(0);
-            }
+        //    for (int i = 0; i < amountToAdd; i++)
+        //    {
+        //        myList = new CustomLists();
+        //        myList.Add(i);
+        //    }
 
 
-            // Assert
+        //    // Assert
 
-            int actual = myList.Count;
+        //    int actual = myList.Count;
 
-            Assert.AreEqual(expected, actual);
-        }
+        //    Assert.AreEqual(expected, actual);
+        //}
+
+        /////////////////////////////////// Remove an object to an instance
+
+        //[Test()]
+        //public void IterateListRemove()
+        //{
+        //    // Arrange
+
+        //    CustomLists myList = new CustomLists();
+
+        //    int amountToSubtract = 12;
+        //    int expected = IndexOutOfRangeException;
+
+
+        //    // Act
+
+        //    for (int i = 0; i < amountToSubtract; i++)
+        //    {
+        //        myList = new CustomLists();
+        //        myList.Remove[0];
+        //    }
+
+
+        //    // Assert
+
+        //    int actual = myList.Count;
+
+        //    Assert.AreEqual(expected, actual);
+        //}
+
+        //[Test()]
+        //public void IterateListRemoveNegativeInt()
+        //{
+        //    // Arrange
+
+        //    CustomLists myList = new CustomLists();
+
+        //    int amountToSubtract = -2;
+        //    int expected = null;
+
+
+        //    // Act
+
+        //    for (int i = 0; i < amountToSubtract; i++)
+        //    {
+        //        myList = new CustomLists();
+        //        myList.remove(0);
+        //    }
+
+
+        //    // Assert
+
+        //    int actual = myList.Count;
+
+        //    Assert.AreEqual(expected, actual);
+        //}
 
    
 
-        ///////////////////////////////// Override String Method
+        /////////////////////////////////// Override String Method
 
-        [Test()]
-        public void IntInListToString()
-        {
-            //Arrange
-            CustomLists myList = new CustomLists();
-            myList.Add(1);
-            myList.Add(7);
-            myList.Add(18);
-            myList.Add(24);
-            myList.Add(58);
+        //[Test()]
+        //public void IntInListToString()
+        //{
+        //    //Arrange
+        //    CustomLists myList = new CustomLists();
+        //    myList.Add(1);
+        //    myList.Add(7);
+        //    myList.Add(18);
+        //    myList.Add(24);
+        //    myList.Add(58);
 
-            string expected = "17182458";
+        //    string expected = "17182458";
 
-            //Act
-            string actual = myList.ToString();
+        //    //Act
+        //    string actual = myList.ToString();
 
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
 
-        [Test()]
-        public void ToString_ObjectInList_ToString()
-        {
-            //Arrange
-            CustomLists myList = new CustomLists();
+        //[Test()]
+        //public void ToString_ObjectInList_ToString()
+        //{
+        //    //Arrange
+        //    CustomLists myList = new CustomLists();
 
-            CustomLists colors = new CustomLists();
-            colors.Add("red, ");
-            colors.Add("orange, ");
-            colors.Add("yellow.");
+        //    CustomLists colors = new CustomLists();
+        //    colors.Add("red, ");
+        //    colors.Add("orange, ");
+        //    colors.Add("yellow.");
             
-            myList.Add(colors);
+        //    myList.Add(colors);
 
-            string expected = "red, orange, yellow.";
+        //    string expected = "red, orange, yellow.";
 
-            //Act
-            string actual = myList.ToString();
+        //    //Act
+        //    string actual = myList.ToString();
 
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-
-
-        ///////////////////////////////// Overload Plus Sign Operator
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
 
 
-        [Test()]
-        public void OverloadPlusSignOperatorAddTwoListsTogether()
-        {
-            //Arrange
-            CustomLists myList = new CustomLists();
-            Add.mylist(0);
-            Add.mylist(1);
-            Add.mylist(2);
-            Add.mylist(3);
-            Add.mylist(4);
-
-            CustomLists myList2 = new CustomLists();
-            Add.mylist(4);
-            Add.mylist(3);
-            Add.mylist(2);
-            Add.mylist(1);
-            Add.mylist(0);
-
-            int expected = 3;
-
-            //Act
-            CustomLists actual = myList + myList2;
+        /////////////////////////////////// Overload Plus Sign Operator
 
 
-            //Assert     
-            Assert.AreEqual(expected, actual[6]);
-        }
+        //[Test()]
+        //public void OverloadPlusSignOperatorAddTwoListsTogether()
+        //{
+        //    //Arrange
+        //    CustomLists myList = new CustomLists();
+        //    Add.mylist(0);
+        //    Add.mylist(1);
+        //    Add.mylist(2);
+        //    Add.mylist(3);
+        //    Add.mylist(4);
 
-        ///////////////////////////////// Overload Minus Sign Operator
+        //    CustomLists myList2 = new CustomLists();
+        //    Add.mylist(4);
+        //    Add.mylist(3);
+        //    Add.mylist(2);
+        //    Add.mylist(1);
+        //    Add.mylist(0);
 
+        //    int expected = 3;
 
-        [Test()]
-        public void OverloadMinusSignOperatorSubtractTwoListsTogether()
-        {
-            //Arrange
-            CustomLists myList = new CustomLists();
-            Add.mylist(0);
-            Add.mylist(1);
-            Add.mylist(2);
-            Add.mylist(3);
-            Add.mylist(4);
-            Add.mylist(5);
-
-            CustomLists myList2 = new CustomLists();
-            Add.mylist(4);
-            Add.mylist(3);
-            Add.mylist(2);
-            Add.mylist(1);
-            Add.mylist(0);
-
-            int expected = 5;
-
-            //Act
-            CustomLists actual = myList - myList2;
+        //    //Act
+        //    CustomLists actual = myList + myList2;
 
 
-            //Assert     
-            Assert.AreEqual(expected, actual[0]);
-        }
+        //    //Assert     
+        //    Assert.AreEqual(expected, actual[6]);
+        //}
+
+        /////////////////////////////////// Overload Minus Sign Operator
+
+
+        //[Test()]
+        //public void OverloadMinusSignOperatorSubtractTwoListsTogether()
+        //{
+        //    //Arrange
+        //    CustomLists myList = new CustomLists();
+        //    Add.mylist(0);
+        //    Add.mylist(1);
+        //    Add.mylist(2);
+        //    Add.mylist(3);
+        //    Add.mylist(4);
+        //    Add.mylist(5);
+
+        //    CustomLists myList2 = new CustomLists();
+        //    Add.mylist(4);
+        //    Add.mylist(3);
+        //    Add.mylist(2);
+        //    Add.mylist(1);
+        //    Add.mylist(0);
+
+        //    int expected = 5;
+
+        //    //Act
+        //    CustomLists actual = myList - myList2;
+
+
+        //    //Assert     
+        //    Assert.AreEqual(expected, actual[0]);
+        //}
     }
 }

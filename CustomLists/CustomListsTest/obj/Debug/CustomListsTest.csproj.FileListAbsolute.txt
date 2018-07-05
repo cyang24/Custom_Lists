@@ -1,2 +1,11 @@
 /Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomListsTest/obj/Debug/CustomListsTest.csprojResolveAssemblyReference.cache
 /Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomListsTest/obj/Debug/CustomListsTest.csproj.CoreCompileInputs.cache
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomListsTest/bin/Debug/CustomListsTest.dll
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomListsTest/bin/Debug/CustomListsTest.pdb
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomListsTest/bin/Debug/CustomLists.exe
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomListsTest/bin/Debug/nunit.framework.dll
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomListsTest/bin/Debug/CustomLists.pdb
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomListsTest/bin/Debug/nunit.framework.pdb
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomListsTest/bin/Debug/nunit.framework.xml
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomListsTest/obj/Debug/CustomListsTest.dll
+/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomListsTest/obj/Debug/CustomListsTest.pdb
