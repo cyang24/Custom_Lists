@@ -3,19 +3,16 @@ using System.Collections.Generic;
 
 namespace CustomLists
 {
-    public class CustomLists
+    public class CustomLists<T>
     {
-        Type type;
 
         public CustomLists()
         {
         }
 
-        public void Add(type)
+        public void Add(T itemToAdd)
         {
             
-            List<Type> 
-
         }
 
     }   
