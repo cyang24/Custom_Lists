@@ -9,7 +9,7 @@ namespace CustomLists
         public static void Main(string[] args)
         {
             //List<int> numbers = new List<int>();
-            //numbers.Add(1);
+            //numbers.Remove(1);
         }
     }
 }
