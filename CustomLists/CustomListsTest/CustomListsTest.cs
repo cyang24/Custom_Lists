@@ -8,13 +8,13 @@ namespace CustomListsTest
     [TestFixture()]
     public class CustomLists
     {
-        ///////////////////////////////// Add to list
+        /////////////////////////////////// Add to list
 
 
         [Test()]
         public void AddtoList()
         {
-            // Arrange
+             //Arrange
 
             CustomLists<int> myList = new CustomLists<int>();
 
@@ -32,153 +32,158 @@ namespace CustomListsTest
 
         }
 
-        //[Test()]
-        //public void AddTwoValuesList()
-        //{
-        //    // Arrange
+        [Test()]
+        public void AddTwoValuesList()
+        {
+            // Arrange
 
-        //    CustomLists myList = new CustomLists();
+            CustomLists<int> myList = new CustomLists<int>();
 
-        //    int value = 16;
-        //    int value2 = 40;
-        //    int expected = 40;
+            int value = 16;
+            int value2 = 40;
+            int expected = 40;
                 
-        //    // Act
+            // Act
 
-        //    myList.Add(value);
-        //    myList.Add(value2);
+            myList.Add(value);
+            myList.Add(value2);
 
-        //    // Assert
+            // Assert
 
-        //    int actual = myList[1];
-        //    Assert.AreEqual(expected, actual);
+            int actual = myList[1];
+            Assert.AreEqual(expected, actual);
 
-        //}
+        }
 
-        //[Test()]
-        //public void AddMultipleValuesWithMathList()
-        //{
-        //    // Arrange
+        [Test()]
+        public void AddMultipleValuesWithMathList()
+        {
+            // Arrange
 
-        //    CustomLists myList = new CustomLists();
+            CustomLists<int> myList = new CustomLists<int>();
 
-        //    int value = 16;
-        //    int value2 = 40;
-        //    int value3 = 3 + 4;
-        //    int expected = 7;
-            
-        //    // Act
+            int value = 16;
+            int value2 = 40;
+            int value3 = 3 + 4;
+            int value4 = 40;
+            int value5 = 11;
+            int value6 = 9;
+            int value7 = 35;
+            int value8 = 90;
+            int value9 = 1;
+            int value10 = 21;
 
-        //    myList.Add(value);
-        //    myList.Add(value2);
-        //    myList.Add(value3);
-
-        //    // Assert
-
-        //    int actual = myList[2];
-        //    Assert.AreEqual(expected, actual);
-        //}
-
-        //[Test()]
-        //public void AddStringList()
-        //{
-        //    // Arrange
-
-        //    CustomLists myList = new CustomLists();
-
-        //    string value = "a";
-        //    string expected = "a";
-
-        //    // Act
-
-        //    myList.Add(value);
           
 
-        //    // Assert
+            int expected = 90;
+            
+            // Act
 
-        //    string actual = myList[0];
-        //    Assert.AreEqual(expected, actual);
-        //}
+            myList.Add(value);
+            myList.Add(value2);
+            myList.Add(value3);
+            myList.Add(value4);
+            myList.Add(value5);
+            myList.Add(value6);
+            myList.Add(value7);
+            myList.Add(value8);
+            myList.Add(value9);
+            myList.Add(value10);
+           
+
+            // Assert
+
+            int actual = myList[7];
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test()]
+        public void AddStringList()
+        {
+            // Arrange
+
+            CustomLists<string> myList = new CustomLists<string>();
+
+            string value = "a";
+            string expected = "a";
+
+            // Act
+
+            myList.Add(value);
+          
+
+            // Assert
+
+            string actual = myList[0];
+            Assert.AreEqual(expected, actual);
+        }
 
         //public void AddObjectsFromList()
         //{
-        //    //Arrange
-        //    CustomLists myList = new CustomLists();
+            ////Arrange
+            //CustomLists<string> myList = new CustomLists<string>();
 
-        //    CustomLists colors = new CustomLists();
-        //    colors.Add("red");
-        //    colors.Add("orange");
-        //    colors.Add("yellow");
+            //CustomLists<TesterObjects> colors = new CustomLists<TesterObjects>();
+           
+            //int expected = 6;
+           
+            ////Act
+           
 
-        //    CustomLists colors2 = new CustomLists();
-        //    colors2 = new CustomLists();
-        //    colors2.Add("green");
-        //    colors2.Add("blue");
-        //    colors2.Add("indigo");
+            ////Assert
+            //int actual = myList.;
 
-        //    CustomLists expected = new CustomLists();
-        //    expected.Add("red");
-        //    expected.Add("orange");
-        //    expected.Add("yellow");
-        //    expected.Add("green");
-        //    expected.Add("blue");
-        //    expected.Add("indigo");
-
-        //    //Act
-        //    myList = myList.Add(colors) + myList.Add(colors2);
-
-        //    //Assert
-        //    CustomLists actual = myList;
-
-        //    Assert.AreEqual(expected, actual);
+            //Assert.AreEqual(expected, actual);
 
         //}
 
-        /////////////////////////////////// Remove from lists
+        /////////////////////////////// Remove from lists
 
-        //[Test()]
-        //public void RemoveIntFromList()
-        //{
-        //    //Arrange
-        //    CustomLists myList = new CustomLists(); 
-        //    int value = 5;
-        //    int value2 = 10;
-        //    int value3 = 20;
-        //    int expected = 20;
+        [Test()]
+        public void RemoveIntFromList()
+        {
+            //Arrange
+            CustomLists<int> myList = new CustomLists<int>();
+            int value = 5;
+            int value2 = 10;
+            int value3 = 20;
+            int expected = 20;
 
-        //    //Act
-        //    myList.Add(value);
-        //    myList.Add(value2);
-        //    myList.Add(value3);
+            //Act
+            myList.Add(value);
+            myList.Add(value2);
+            myList.Add(value3);
 
-        //    int actual = myList.Remove(1);
+            myList.Remove(value2);
 
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+            int actual = myList[1];
 
-        //[Test()]
-        //public void RemoveStringFromList()
-        //{
-        //    //Arrange
-        //    CustomLists myList = new CustomLists();
-        //    myList.Add("What ");
-        //    myList.Add("color ");
-        //    myList.Add("are ");
-        //    myList.Add("your ");
-        //    myList.Add("shoes?");
-        //    myList.Add(".");
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
-        //    string expected = "What are your shoes?.";
+        [Test()]
+        public void RemoveStringFromList()
+        {
+            //Arrange
+            CustomLists<string> myList = new CustomLists<string>();
+            myList.Add("What");
+            myList.Add("color");
+            myList.Add("are");
+            myList.Add("your");
+            myList.Add("shoes?");
+            myList.Add(".");
 
-        //    //Act
+            string expected = "are";
+            myList.Remove("your");
+            //Act
 
-        //    myList.Remove("color");
-        //    string actual = myList.Remove("string");
-
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+            string actual = myList[2];
+                                               
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
         //[Test()]
         //public void RemoveObjectsFromList()
@@ -211,7 +216,7 @@ namespace CustomListsTest
         //}
 
       
-        /////////////////////////////////// Count Property
+        ///////////////////////////////// Count Property
 
         //[Test()]
         //public void CountStringsInList()

@@ -5,36 +5,75 @@ namespace CustomLists
 {
     public class CustomLists<T>
     {
-        public int count;
-        public int arrayCount;
+        private int count = 0;
+        private int capacity;
 
-        private T[] array = new T[100];
+        public int Capacity
+        {
+            get { return capacity; }
+            set { capacity = value; }
+        }
+
+        public int Count
+        {
+            get { return count; }
+            set { count = value; }
+        }
+
+        private T[] array;
 
         public T this[int i]
         {
             get { return array[i]; }
             set { array[i] = value; }
         }
-
-        public T[] Array;
-        public T[] temporaryArray;
        
         public CustomLists()
         {
-            count = 0;
-            arrayCount = 5;
-            Array = new T[arrayCount];
-            
+            Count = 0;
+            Capacity = 5;
+            array = new T[Capacity];
         }
 
-        public void Add(T itemToAdd)
+        public void Add(T item)
         {
-            for (int i = 0; i < arrayCount; i++)
+            if (count >= capacity)
             {
-                Array[i] = array [i];
+                capacity += 5;  
+                T[] newArray = new T[capacity];
+
+                for (int i = 0; i < count; i++)
+                {
+                    newArray[i] = array[i];
+                }
+
+                array = newArray;
+                array[count] = item;
+                count++;
             }
-            array = Array;
-            Array[count] = itemToAdd;
+            else
+            {
+                array[count] = item;
+                count++;
+            }
+        }
+
+
+        public bool Remove(T itemToRemove)
+        {
+            for (int i = 0; i < count; i++)
+                if (array[i].Equals(itemToRemove))
+                {
+                    while (i < count)
+                    {
+                        array[i] = array[i + 1];
+                        i++;
+                    }
+                    Count--;
+                    return true;
+                }
+
+            return false;
         }
    }   
 }
