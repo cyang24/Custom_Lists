@@ -11,14 +11,6 @@ namespace CustomLists
             set { name = value; }
         }
 
-        private string color;
-
-        public string Color
-        {
-            get { return color; }
-            set { color = value; }
-        }
-
         private int age;
 
         public int Age
@@ -28,10 +20,9 @@ namespace CustomLists
         }
 
 
-        public TesterObjects(string Name, string Color, int Age)
+        public TesterObjects(string Name, int Age)
         {
             this.Name = Name;
-            this.Color = Color;
             this.Age = Age;
         }
            

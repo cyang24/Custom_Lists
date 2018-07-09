@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+
 
 namespace CustomLists
 {
-    public class CustomLists<T>
+    public class CustomLists<T> : IEnumerable 
     {
         private int count = 0;
         private int capacity = 5;
@@ -145,13 +147,17 @@ namespace CustomLists
             return zipLists;
         }
 
-
-        public IEnumerator<T> GetEnumerator()
+        public IEnumerator GetEnumerator()
         {
             for (int i = 0; i < array.Length; i++)
             {
                 yield return array[i];
             }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
 
    }   
