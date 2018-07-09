@@ -11,179 +11,179 @@ namespace CustomListsTest
         /////////////////////////////////// Add to list
 
 
-        [Test()]
-        public void AddtoList()
-        {
-             //Arrange
-
-            CustomLists<int> myList = new CustomLists<int>();
-
-            int value = 16;
-            int expected = 16;
-
-            // Act
-
-            myList.Add(value);
-
-            // Assert
-
-            int actual = myList[0];
-            Assert.AreEqual(expected, actual);
-
-        }
-
-        [Test()]
-        public void AddTwoValuesList()
-        {
-            // Arrange
-
-            CustomLists<int> myList = new CustomLists<int>();
-
-            int value = 16;
-            int value2 = 40;
-            int expected = 40;
-                
-            // Act
-
-            myList.Add(value);
-            myList.Add(value2);
-
-            // Assert
-
-            int actual = myList[1];
-            Assert.AreEqual(expected, actual);
-
-        }
-
-        [Test()]
-        public void AddMultipleValuesWithMathList()
-        {
-            // Arrange
-
-            CustomLists<int> myList = new CustomLists<int>();
-
-            int value = 16;
-            int value2 = 40;
-            int value3 = 3 + 4;
-            int value4 = 40;
-            int value5 = 11;
-            int value6 = 9;
-            int value7 = 35;
-            int value8 = 90;
-            int value9 = 1;
-            int value10 = 21;
-
-          
-
-            int expected = 90;
-            
-            // Act
-
-            myList.Add(value);
-            myList.Add(value2);
-            myList.Add(value3);
-            myList.Add(value4);
-            myList.Add(value5);
-            myList.Add(value6);
-            myList.Add(value7);
-            myList.Add(value8);
-            myList.Add(value9);
-            myList.Add(value10);
-           
-
-            // Assert
-
-            int actual = myList[7];
-
-            Assert.AreEqual(expected, actual);
-        }
-
-        [Test()]
-        public void AddStringList()
-        {
-            // Arrange
-
-            CustomLists<string> myList = new CustomLists<string>();
-
-            string value = "a";
-            string expected = "a";
-
-            // Act
-
-            myList.Add(value);
-          
-
-            // Assert
-
-            string actual = myList[0];
-            Assert.AreEqual(expected, actual);
-        }
-
-        //public void AddObjectsFromList()
+        //[Test()]
+        //public void AddtoList()
         //{
-            ////Arrange
-            //CustomLists<string> myList = new CustomLists<string>();
+        //     //Arrange
 
-            //CustomLists<TesterObjects> colors = new CustomLists<TesterObjects>();
-           
-            //int expected = 6;
-           
-            ////Act
-           
+        //    CustomLists<int> myList = new CustomLists<int>();
 
-            ////Assert
-            //int actual = myList.;
+        //    int value = 16;
+        //    int expected = 16;
 
-            //Assert.AreEqual(expected, actual);
+        //    // Act
+
+        //    myList.Add(value);
+
+        //    // Assert
+
+        //    int actual = myList[0];
+        //    Assert.AreEqual(expected, actual);
 
         //}
 
-        /////////////////////////////// Remove from lists
+        //[Test()]
+        //public void AddTwoValuesList()
+        //{
+        //    // Arrange
 
-        [Test()]
-        public void RemoveIntFromList()
-        {
-            //Arrange
-            CustomLists<int> myList = new CustomLists<int>();
-            int value = 5;
-            int value2 = 10;
-            int value3 = 20;
-            int expected = 20;
+        //    CustomLists<int> myList = new CustomLists<int>();
 
-            //Act
-            myList.Add(value);
-            myList.Add(value2);
-            myList.Add(value3);
+        //    int value = 16;
+        //    int value2 = 40;
+        //    int expected = 40;
+                
+        //    // Act
 
-            myList.Remove(value2);
+        //    myList.Add(value);
+        //    myList.Add(value2);
 
-            int actual = myList[1];
+        //    // Assert
 
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
+        //    int actual = myList[1];
+        //    Assert.AreEqual(expected, actual);
 
-        [Test()]
-        public void RemoveStringFromList()
-        {
-            //Arrange
-            CustomLists<string> myList = new CustomLists<string>();
-            myList.Add("What");
-            myList.Add("color");
-            myList.Add("are");
-            myList.Add("your");
-            myList.Add("shoes?");
-            myList.Add(".");
+        //}
 
-            string expected = "are";
-            myList.Remove("your");
-            //Act
+        //[Test()]
+        //public void AddMultipleValuesWithMathList()
+        //{
+        //    // Arrange
 
-            string actual = myList[2];
+        //    CustomLists<int> myList = new CustomLists<int>();
+
+        //    int value = 16;
+        //    int value2 = 40;
+        //    int value3 = 3 + 4;
+        //    int value4 = 40;
+        //    int value5 = 11;
+        //    int value6 = 9;
+        //    int value7 = 35;
+        //    int value8 = 90;
+        //    int value9 = 1;
+        //    int value10 = 21;
+
+          
+
+        //    int expected = 90;
+            
+        //    // Act
+
+        //    myList.Add(value);
+        //    myList.Add(value2);
+        //    myList.Add(value3);
+        //    myList.Add(value4);
+        //    myList.Add(value5);
+        //    myList.Add(value6);
+        //    myList.Add(value7);
+        //    myList.Add(value8);
+        //    myList.Add(value9);
+        //    myList.Add(value10);
+           
+
+        //    // Assert
+
+        //    int actual = myList[7];
+
+        //    Assert.AreEqual(expected, actual);
+        //}
+
+        //[Test()]
+        //public void AddStringList()
+        //{
+        //    // Arrange
+
+        //    CustomLists<string> myList = new CustomLists<string>();
+
+        //    string value = "a";
+        //    string expected = "a";
+
+        //    // Act
+
+        //    myList.Add(value);
+          
+
+        //    // Assert
+
+        //    string actual = myList[0];
+        //    Assert.AreEqual(expected, actual);
+        //}
+
+        ////public void AddObjectsFromList()
+        ////{
+        //    ////Arrange
+        //    //CustomLists<string> myList = new CustomLists<string>();
+
+        //    //CustomLists<TesterObjects> colors = new CustomLists<TesterObjects>();
+           
+        //    //int expected = 6;
+           
+        //    ////Act
+           
+
+        //    ////Assert
+        //    //int actual = myList.;
+
+        //    //Assert.AreEqual(expected, actual);
+
+        ////}
+
+        ///////////////////////////////// Remove from lists
+
+        //[Test()]
+        //public void RemoveIntFromList()
+        //{
+        //    //Arrange
+        //    CustomLists<int> myList = new CustomLists<int>();
+        //    int value = 5;
+        //    int value2 = 10;
+        //    int value3 = 20;
+        //    int expected = 20;
+
+        //    //Act
+        //    myList.Add(value);
+        //    myList.Add(value2);
+        //    myList.Add(value3);
+
+        //    myList.Remove(value2);
+
+        //    int actual = myList[1];
+
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
+
+        //[Test()]
+        //public void RemoveStringFromList()
+        //{
+        //    //Arrange
+        //    CustomLists<string> myList = new CustomLists<string>();
+        //    myList.Add("What");
+        //    myList.Add("color");
+        //    myList.Add("are");
+        //    myList.Add("your");
+        //    myList.Add("shoes?");
+        //    myList.Add(".");
+
+        //    string expected = "are";
+        //    myList.Remove("your");
+        //    //Act
+
+        //    string actual = myList[2];
                                                
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
 
         //[Test()]
         //public void RemoveObjectsFromList()
@@ -440,47 +440,45 @@ namespace CustomListsTest
 
         /////////////////////////////////// Override String Method
 
-        //[Test()]
-        //public void IntInListToString()
-        //{
-        //    //Arrange
-        //    CustomLists myList = new CustomLists();
-        //    myList.Add(1);
-        //    myList.Add(7);
-        //    myList.Add(18);
-        //    myList.Add(24);
-        //    myList.Add(58);
+        [Test()]
+        public void IntInListToString()
+        {
+            //Arrange
+            CustomLists<int> myList = new CustomLists<int>();
+            myList.Add(1);
+            myList.Add(7);
+            myList.Add(18);
+            myList.Add(24);
+            myList.Add(58);
 
-        //    string expected = "17182458";
+            string expected = "17182458";
 
-        //    //Act
-        //    string actual = myList.ToString();
+            //Act
+            string actual = myList.ToString();
 
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
-        //[Test()]
-        //public void ToString_ObjectInList_ToString()
-        //{
-        //    //Arrange
-        //    CustomLists myList = new CustomLists();
+        [Test()]
+        public void StringInListToString()
+        {
+            //Arrange
+            CustomLists<string> myList = new CustomLists<string>();
+            myList.Add("This ");
+            myList.Add("is ");
+            myList.Add("a ");
+            myList.Add("string ");
+            myList.Add("test!");
 
-        //    CustomLists colors = new CustomLists();
-        //    colors.Add("red, ");
-        //    colors.Add("orange, ");
-        //    colors.Add("yellow.");
-            
-        //    myList.Add(colors);
+            string expected = "This is a string test!";
 
-        //    string expected = "red, orange, yellow.";
+            //Act
+            string actual = myList.ToString();
 
-        //    //Act
-        //    string actual = myList.ToString();
-
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
 
         /////////////////////////////////// Overload Plus Sign Operator

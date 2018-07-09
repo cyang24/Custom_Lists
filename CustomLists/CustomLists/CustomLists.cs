@@ -6,18 +6,16 @@ namespace CustomLists
     public class CustomLists<T>
     {
         private int count = 0;
-        private int capacity;
+        private int capacity = 5;
 
         public int Capacity
         {
             get { return capacity; }
-            set { capacity = value; }
         }
 
         public int Count
         {
             get { return count; }
-            set { count = value; }
         }
 
         private T[] array;
@@ -30,27 +28,28 @@ namespace CustomLists
        
         public CustomLists()
         {
-            Count = 0;
-            Capacity = 5;
             array = new T[Capacity];
         }
+
 
         public void Add(T item)
         {
             if (count >= capacity)
             {
-                capacity += 5;  
-                T[] newArray = new T[capacity];
+                capacity += 5; 
+
+                T[] temporaryArray = new T[capacity];
 
                 for (int i = 0; i < count; i++)
                 {
-                    newArray[i] = array[i];
+                    temporaryArray[i] = array[i];
                 }
 
-                array = newArray;
+                array = temporaryArray;
                 array[count] = item;
                 count++;
             }
+
             else
             {
                 array[count] = item;
@@ -69,11 +68,70 @@ namespace CustomLists
                         array[i] = array[i + 1];
                         i++;
                     }
-                    Count--;
+                    count--;
+
                     return true;
                 }
 
             return false;
         }
+
+        public override string ToString()
+        {
+            string item = "";
+            foreach (T value in array)
+            {
+                item += value;
+            }
+
+            return item;
+        }
+        z
+        public OverloadPlusOperator (CustomLists<T> listA, CustomLists<T> listB)
+        {
+            CustomLists<T> newCombinedLists = new CustomLists<T>();
+            newCombinedLists.Array = new T[listA.Count + listB.Count];
+
+            int j = 0;
+
+            for (int i = 0; i < listA.Count; i++)
+            {
+                resultList.Array[j] = listA.Array[i];
+                j++;
+            }
+            for (int i = 0; i < listB.Count; i++)
+            {
+                resultList.Array[j] = listB.Array[i];
+                j++;
+            }
+
+            return newCombinedLists;
+        }
+
+        public OverloadMinusOperator(CustomLists<T> listA, CustomLists<T> listB)
+        {
+            for (int i = 0; i < listA.Count(); i++)
+            {
+                for (int j = 0; j < listB.Count(); j++)
+                {
+                    if (listA.array[i].Equals(listB.array[j]))
+                    {
+                        listA.RemoveAt(listB.array[j]);
+                    }
+                }
+            }
+            return listA;
+        }
+
+
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            for (int i = 0; i < array.Length; i++)
+            {
+                yield return array[i];
+            }
+        }
+
    }   
 }
