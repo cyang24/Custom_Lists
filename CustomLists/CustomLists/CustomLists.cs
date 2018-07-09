@@ -31,6 +31,7 @@ namespace CustomLists
             array = new T[Capacity];
         }
 
+        CustomLists<T> resultsList = new CustomLists<T>();
 
         public void Add(T item)
         {
@@ -86,43 +87,63 @@ namespace CustomLists
 
             return item;
         }
-        z
-        public OverloadPlusOperator (CustomLists<T> listA, CustomLists<T> listB)
+
+        public CustomLists<T> OverloadPlusOperator (CustomLists<T> listA, CustomLists<T> listB)
         {
             CustomLists<T> newCombinedLists = new CustomLists<T>();
-            newCombinedLists.Array = new T[listA.Count + listB.Count];
+
+            newCombinedLists.array = new T[listA.Count + listB.Count];
 
             int j = 0;
 
             for (int i = 0; i < listA.Count; i++)
             {
-                resultList.Array[j] = listA.Array[i];
+                resultsList.array[j] = listA.array[i];
                 j++;
             }
+
             for (int i = 0; i < listB.Count; i++)
             {
-                resultList.Array[j] = listB.Array[i];
+                resultsList.array[j] = listB.array[i];
                 j++;
             }
 
             return newCombinedLists;
         }
 
-        public OverloadMinusOperator(CustomLists<T> listA, CustomLists<T> listB)
+        public CustomLists<T> OverloadMinusOperator(CustomLists<T> listA, CustomLists<T> listB)
         {
-            for (int i = 0; i < listA.Count(); i++)
+            for (int i = 0; i < listA.Count; i++)
             {
-                for (int j = 0; j < listB.Count(); j++)
+                for (int j = 0; j < listB.Count; j++)
                 {
                     if (listA.array[i].Equals(listB.array[j]))
                     {
-                        listA.RemoveAt(listB.array[j]);
+                        listA.Remove(listB.array[j]);
                     }
                 }
             }
             return listA;
         }
 
+        public CustomLists<T> ZipLists(CustomLists<T> listA, CustomLists<T> listB)
+        {
+            CustomLists<T> zipLists = new CustomLists<T>();
+
+            zipLists.array = new T[listA.Count + listB.Count];
+
+            int j = 0;
+
+            for (int i = 0; i < listA.Count; i++)
+            {
+                zipLists.array[j] = listA.array[i];
+                j++;
+
+                zipLists.array[j] = listB.array[i];
+                j++;
+            }
+            return zipLists;
+        }
 
 
         public IEnumerator<T> GetEnumerator()
