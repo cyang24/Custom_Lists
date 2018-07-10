@@ -1,12 +1,13 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Collections;
 using CustomLists;
 
 namespace CustomListsTest
 {
     [TestFixture()]
-    public class CustomLists
+    public class CustomListsTest
     {
         /////////////////////////////////// Add to list
 
@@ -119,10 +120,11 @@ namespace CustomListsTest
             Assert.AreEqual(expected, actual);
         }
 
+        [Test()]
         public void AddObjectsFromList()
         {
-            //List<TesterObjects> myList = new List<TesterObjects>();
-            CustomLists<TesterObjects> myList = new CustomLists<TesterObjects>();
+            
+            List<TesterObjects> myList = new List<TesterObjects>();
 
             int expected = 4;
 
@@ -168,6 +170,35 @@ namespace CustomListsTest
         }
 
         [Test()]
+        public void RemoveIntFromList_CheckLastIndex()
+        {
+            //Arrange
+            CustomLists<int> myList = new CustomLists<int>();
+            int value = 5;
+            int value2 = 10;
+            int value3 = 20;
+            int value4 = 15;
+            int value5 = 60;
+
+            int expected = 60;
+
+            //Act
+            myList.Add(value);
+            myList.Add(value2);
+            myList.Add(value3);
+            myList.Add(value4);
+            myList.Add(value5);
+
+
+            myList.Remove(value3);
+
+            int actual = myList[4];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test()]
         public void RemoveStringFromList()
         {
             //Arrange
@@ -184,6 +215,28 @@ namespace CustomListsTest
             //Act
 
             string actual = myList[2];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test()]
+        public void RemoveStringFromList_CheckCount()
+        {
+            //Arrange
+            CustomLists<string> myList = new CustomLists<string>();
+            myList.Add("What");
+            myList.Add("color");
+            myList.Add("are");
+            myList.Add("your");
+            myList.Add("shoes?");
+            myList.Add(".");
+
+            int expected = 5;
+            myList.Remove("your");
+            //Act
+
+            int actual = myList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -218,7 +271,7 @@ namespace CustomListsTest
         /////////////////////////////////// Override String Method
 
         [Test()]
-        public void IntInListToString()
+        public void IntListToString()
         {
             //Arrange
             CustomLists<int> myList = new CustomLists<int>();
@@ -238,7 +291,7 @@ namespace CustomListsTest
         }
 
         [Test()]
-        public void StringInListToString()
+        public void StringListToString()
         {
             //Arrange
             CustomLists<string> myList = new CustomLists<string>();
@@ -288,6 +341,38 @@ namespace CustomListsTest
             myList.OverloadPlusOperator(listA, listB);
 
             int actual = myList[6];
+
+            //Assert     
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test()]
+        public void OverloadPlusSignOperatorAddTwoListsIntCount()
+        {
+            //Arrange
+
+            CustomLists<int> myList = new CustomLists<int>();
+
+            CustomLists<int> listA = new CustomLists<int>();
+            listA.Add(0);
+            listA.Add(1);
+            listA.Add(2);
+            listA.Add(3);
+            listA.Add(4);
+
+            CustomLists<int> listB = new CustomLists<int>();
+            listB.Add(4);
+            listB.Add(3);
+            listB.Add(2);
+            listB.Add(1);
+            listB.Add(0);
+
+            int expected = 9;
+
+            //Act
+            myList.OverloadPlusOperator(listA, listB);
+
+            int actual = myList.Count;
 
             //Assert     
             Assert.AreEqual(expected, actual);
@@ -398,7 +483,7 @@ namespace CustomListsTest
 
 
         [Test()]
-        public void ZipTwoLists()
+        public void ZipTwoListsInt()
         {
             //Arrange
             CustomLists<int> myLists = new CustomLists<int>();
@@ -430,6 +515,52 @@ namespace CustomListsTest
             expected.Add(4);
             expected.Add(0);
             expected.Add(5);
+
+            myLists = myLists.ZipLists(listA, listB);
+
+
+            //Assert  
+
+            Assert.AreEqual(expected, myLists);
+
+        }
+
+        [Test()]
+        public void ZipTwoListsStrings()
+        {
+            //Arrange
+            CustomLists<string> myLists = new CustomLists<string>();
+
+            CustomLists<string> listA = new CustomLists<string>();
+            listA.Add("H");
+            listA.Add("l");
+            listA.Add("o");
+            listA.Add("W");
+            listA.Add("r");
+            listA.Add("d");
+
+            CustomLists<string> listB = new CustomLists<string>();
+            listB.Add("e");
+            listB.Add("l");
+            listB.Add(" ");
+            listB.Add("o");
+            listB.Add("l");
+            listB.Add("!");
+
+            CustomLists<string> expected = new CustomLists<string>();
+            expected.Add("H");
+            expected.Add("e");
+            expected.Add("l");
+            expected.Add("l");
+            expected.Add("o");
+            expected.Add(" ");
+            expected.Add("W");
+            expected.Add("o");
+            expected.Add("r");
+            expected.Add("l");
+            expected.Add("d");
+            expected.Add("!");
+
 
             myLists = myLists.ZipLists(listA, listB);
 

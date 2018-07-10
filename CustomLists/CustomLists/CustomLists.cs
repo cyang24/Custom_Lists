@@ -30,6 +30,8 @@ namespace CustomLists
        
         public CustomLists()
         {
+            count = 0;
+            capacity = 5;
             array = new T[Capacity];
         }
 
@@ -90,42 +92,38 @@ namespace CustomLists
             return item;
         }
 
-        public CustomLists<T> OverloadPlusOperator (CustomLists<T> listA, CustomLists<T> listB)
+        public CustomLists<T> OverloadPlusOperator (CustomLists<T> listA, CustomLists<T> listB) // Overload Plus Operator needs two seperate list of the same data type to be passed in the parameter.
         {
-            CustomLists<T> newCombinedLists = new CustomLists<T>();
+            CustomLists<T> newCombinedLists = new CustomLists<T>();                             // list of the same data type is instantiated and declared
 
-            newCombinedLists.array = new T[listA.Count + listB.Count];
-
-            int j = 0;
-
+            newCombinedLists.array = new T[listA.Count + listB.Count];                          // new instantiated list is set to the size of the two list being passed 
+                                                                     
             for (int i = 0; i < listA.Count; i++)
             {
-                resultsList.array[j] = listA.array[i];
-                j++;
+                newCombinedLists.Add(listA[i]);                                                 // new combined list loops and adds all List A items
             }
 
             for (int i = 0; i < listB.Count; i++)
             {
-                resultsList.array[j] = listB.array[i];
-                j++;
+                newCombinedLists.Add(listB[i]);                                                 // new combined list loops and adds all List B items
             }
 
-            return newCombinedLists;
+            return newCombinedLists;                                                            // new combined list is returned with combined Lists A&B
         }
 
-        public CustomLists<T> OverloadMinusOperator(CustomLists<T> listA, CustomLists<T> listB)
+        public CustomLists<T> OverloadMinusOperator(CustomLists<T> listA, CustomLists<T> listB) // Overload Minus Operator needs two seperate list of the same data type to be passed in the parameter.
         {
-            for (int i = 0; i < listA.Count; i++)
+            for (int i = 0; i < listA.Count; i++)                                               // for loop sets conditons and loops through the size of of first list being passed
             {
-                for (int j = 0; j < listB.Count; j++)
+                for (int j = 0; j < listB.Count; j++)                                           // secondary for loop sets conditons and loops through second list being passed
                 {
-                    if (listA.array[i].Equals(listB.array[j]))
-                    {
-                        listA.Remove(listB.array[j]);
+                    if (listA.array[i].Equals(listB.array[j]))                                  // if statement creates boolean condition for removal 
+                    { 
+                        listA.Remove(listB.array[j]);                                           // All true matches are are removed and stored on the stack and repeated until loops finishes
                     }
                 }
             }
-            return listA;
+        return listA;                                                                           // stack unwinds and a returns remaining list of non matching values
         }
 
         public CustomLists<T> ZipLists(CustomLists<T> listA, CustomLists<T> listB)
