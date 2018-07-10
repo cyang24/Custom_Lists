@@ -7,12 +7,13 @@ namespace CustomLists
 {
     public class CustomLists<T> : IEnumerable 
     {
-        private int count = 0;
-        private int capacity = 5;
+        private int count;
+        private int capacity;
 
         public int Capacity
         {
             get { return capacity; }
+            set {  capacity = value; }
         }
 
         public int Count
@@ -27,23 +28,25 @@ namespace CustomLists
             get { return array[i]; }
             set { array[i] = value; }
         }
-       
+        public T[] temporaryArray;
+
         public CustomLists()
         {
+            
             count = 0;
             capacity = 5;
-            array = new T[Capacity];
+            array = new T[capacity];
         }
 
-        CustomLists<T> resultsList = new CustomLists<T>();
+       
 
         public void Add(T item)
         {
             if (count >= capacity)
             {
-                capacity += 5; 
+                capacity += count;
 
-                T[] temporaryArray = new T[capacity];
+                temporaryArray = new T[capacity];
 
                 for (int i = 0; i < count; i++)
                 {
@@ -61,7 +64,6 @@ namespace CustomLists
                 count++;
             }
         }
-
 
         public bool Remove(T itemToRemove)
         {
@@ -92,20 +94,21 @@ namespace CustomLists
             return item;
         }
 
+
         public CustomLists<T> OverloadPlusOperator (CustomLists<T> listA, CustomLists<T> listB) // Overload Plus Operator needs two seperate list of the same data type to be passed in the parameter.
         {
-            CustomLists<T> newCombinedLists = new CustomLists<T>();                             // list of the same data type is instantiated and declared
+        CustomLists<T> newCombinedLists = new CustomLists<T>();                                 // list of the same data type is instantiated and declared
 
-            newCombinedLists.array = new T[listA.Count + listB.Count];                          // new instantiated list is set to the size of the two list being passed 
-                                                                     
-            for (int i = 0; i < listA.Count; i++)
+        newCombinedLists.array = new T[listA.Count + listB.Count];                              // new instantiated list is set to the size of the two list being passed 
+
+            for (int i = 0; i > listA.Count; i++)                                               // new combined list loops and adds all List A items
             {
-                newCombinedLists.Add(listA[i]);                                                 // new combined list loops and adds all List A items
+                newCombinedLists[i] = listA[i];
             }
 
-            for (int i = 0; i < listB.Count; i++)
+            for (int i = 0; i > listB.Count; i++)                                               // new combined list loops and adds all List B items
             {
-                newCombinedLists.Add(listB[i]);                                                 // new combined list loops and adds all List B items
+                newCombinedLists[i] = listA[i];
             }
 
             return newCombinedLists;                                                            // new combined list is returned with combined Lists A&B

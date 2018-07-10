@@ -35,13 +35,13 @@
     <Compile Include="CustomListsTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\CustomLists\CustomLists.csproj">
       <Project>{A6E16049-7AB0-41D8-B156-29AD10EFD436}</Project>
       <Name>CustomLists</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,17 +1,41 @@
 ﻿<Properties StartupConfiguration="{A6E16049-7AB0-41D8-B156-29AD10EFD436}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="CustomLists/CustomLists.cs">
     <Files>
-      <File FileName="CustomListsTest/CustomListsTest.cs" Line="15" Column="32" />
-      <File FileName="CustomLists/CustomLists.cs" Line="17" Column="1" />
+      <File FileName="CustomListsTest/CustomListsTest.cs" Line="20" Column="22" />
+      <File FileName="CustomLists/CustomLists.cs" Line="41" Column="53" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CustomLists" expanded="True">
+            <Node name="CustomLists" expanded="True">
+              <Node name="CustomLists.cs" selected="True" />
+            </Node>
+            <Node name="CustomListsTest" expanded="True">
+              <Node name="Packages" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="CustomLists" expanded="True">
+            <Node name="CustomListsTest" expanded="True">
+              <Node name="CustomListsTest" expanded="True">
+                <Node name="CustomListsTest" expanded="True">
+                  <Node name="OverloadMinusSignOperatorSubtractTwoIntListsTogether" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.CustomLists PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomListsTest/CustomLists&lt;T&gt;.cs" relfile="CustomListsTest/CustomLists&lt;T&gt;.cs" line="23" column="1" />
-      <Breakpoint file="/Users/chouyouyang/Desktop/DevCodeCamp/Projects/CustomLists/CustomLists/CustomListsTest/CustomLists&lt;T&gt;.cs" relfile="CustomListsTest/CustomLists&lt;T&gt;.cs" line="20" column="20" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />

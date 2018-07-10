@@ -1,8 +1,10 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-using System.Collections;
 using CustomLists;
+using System.Collections;
+
+
 
 namespace CustomListsTest
 {
@@ -15,8 +17,7 @@ namespace CustomListsTest
         [Test()]
         public void AddtoList()
         {
-             //Arrange
-
+            //Arrange
             CustomLists<int> myList = new CustomLists<int>();
 
             int value = 16;
@@ -124,7 +125,7 @@ namespace CustomListsTest
         public void AddObjectsFromList()
         {
             
-            List<TesterObjects> myList = new List<TesterObjects>();
+            CustomLists<TesterObjects> myList = new CustomLists<TesterObjects>();
 
             int expected = 4;
 
@@ -190,9 +191,9 @@ namespace CustomListsTest
             myList.Add(value5);
 
 
-            myList.Remove(value3);
+            myList.Remove(myList[2]);
 
-            int actual = myList[4];
+            int actual = myList[3];
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -247,7 +248,7 @@ namespace CustomListsTest
         {
             //Arrange
 
-            List<TesterObjects> myList = new List<TesterObjects>();
+            CustomLists<TesterObjects> myList = new CustomLists<TesterObjects>();
             myList.Add(new TesterObjects("Todd", 12));
             myList.Add(new TesterObjects("John", 15));
             myList.Add(new TesterObjects("Bob",  17));
@@ -367,7 +368,7 @@ namespace CustomListsTest
             listB.Add(1);
             listB.Add(0);
 
-            int expected = 9;
+            int expected = 10;
 
             //Act
             myList.OverloadPlusOperator(listA, listB);
@@ -442,7 +443,7 @@ namespace CustomListsTest
 
             {
             //Assert  
-            int actual = myLists[0];
+            int actual = myLists.Count;
             Assert.AreEqual(expected, actual);
             }
         }
